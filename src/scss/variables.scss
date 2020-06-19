@@ -1,12 +1,20 @@
-/* Display width stops */
-$app-breakpoint-tablet: 600px;
-$app-breakpoint-phone: 420px;
+// Display width stops.
+//
+// Defines the minimum dimensions at which app's layout will change,
+// adapting to different screen sizes, for use in media queries.
+// Dimension values are taken from Bootstrap v4.5.0.
+// Example: @media (min-width: $display-breakpoint-sm) { ... }
+$display-breakpoint-sm: 576px; // Small devices (landscape phones, 576px and up)
+$display-breakpoint-md: 768px; // Medium devices (tablets, 768px and up)
+$display-breakpoint-lg: 992px; // Large devices (desktops, 992px and up)
+$display-breakpoint-xl: 1200px; // Extra large devices (large desktops, 1200px and up)
 
-/* App top bar */
+// App top bar
 $nav-bar-height: 64px;
 $nav-bar-height-tablet: 56px;
 
-/* Padding */
-$padding-default: 15px;
-$padding-small: 10px;
-$padding-micro: 5px;
+// Padding
+$padding-lg: 15px;
+$padding-md: 10px;
+$padding-sm: 5px;
+$padding-xs: 3px;
