@@ -1,9 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+/** Application routing */
+import { AppRoutingModule } from './app-routing.module';
+
+/** Application's root component */
+import { AppComponent } from './app.component';
+
+/** Domain modules */
+import { HomeModule } from './home/home.module';
+import { AuthModule } from './auth/auth.module';
+
+/** UI widgets */
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -11,8 +22,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    HomeModule,
+    AuthModule,
+    MatSidenavModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

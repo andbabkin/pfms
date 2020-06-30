@@ -1,0 +1,43 @@
+mat-toolbar.app-toolbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: $nav-bar-height-tablet;
+  z-index: 10;
+}
+
+mat-sidenav-container.sidenav-container {
+  min-height: 100%;
+  height: auto !important;
+  max-width: 100%;
+  margin: 0;
+  transform: none;
+}
+
+mat-sidenav.app-sidenav {
+  position: fixed;
+  top: $nav-bar-height-tablet;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  min-width: 200px;
+  background-color: #fff;
+}
+
+mat-sidenav-content.sidenav-content {
+  min-height: 100vh;
+  padding-top: $nav-bar-height-tablet;
+}
+
+@media (min-width: $display-breakpoint-md) {
+  mat-toolbar.app-toolbar {
+    height: $nav-bar-height;
+  }
+  mat-sidenav.app-sidenav {
+    top: $nav-bar-height;
+  }
+  mat-sidenav-content.sidenav-content {
+    padding-top: $nav-bar-height;
+  }
+}
