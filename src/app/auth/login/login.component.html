@@ -1,4 +1,33 @@
- <mat-card class="m-15">
-  <p>Login</p>
-  <a routerLink="/" routerLinkActive="active" mat-raised-button>Home</a>
- </mat-card>
+<div id="login">
+  <mat-card class="m-15">
+    <h2>Login {{ processing ? '(processing...)' : '' }}</h2>
+    <p class="text-danger" *ngIf="err"><small>{{ err }}</small></p>
+    <div *ngIf="auth.isLoggedIn()">
+      <p>You are already logged in.</p>
+      <a routerLink="/" routerLinkActive="active" mat-raised-button>Home</a>
+    </div>
+    <div *ngIf="!auth.isLoggedIn()">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="" formControlName="name">
+            <mat-icon matSuffix>face</mat-icon>
+            <mat-hint>Nickname connected with your account</mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="" formControlName="pass">
+            <mat-icon matSuffix>lock</mat-icon>
+            <mat-hint>Your secret word</mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <button type="submit" mat-raised-button color="accent" [disabled]="isDisabled()">Login</button>
+        </p>
+      </form>
+    </div>
+  </mat-card>
+</div>

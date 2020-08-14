@@ -1,0 +1,28 @@
+@import "../../../scss/variables";
+
+#login {
+  width: 100%;
+
+  .mat-card {
+    margin: 10px 10px;
+
+    @media (min-width: 355px) {
+      & {
+        margin: 10px auto;
+        max-width: 300px;
+        width: auto;
+      }
+    }
+
+    @media (min-width: $display-breakpoint-md) {
+      & {
+        margin: 30px auto;
+      }
+    }
+  }
+
+  .mat-form-field {
+    display: block;
+  }
+}
+

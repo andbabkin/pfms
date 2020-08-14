@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +13,14 @@ export class AppComponent implements OnDestroy, OnInit {
 
   private readonly tabletQueryListener: (e: MediaQueryListEvent) => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(
+    changeDetectorRef: ChangeDetectorRef,
+    media: MediaMatcher,
+    public auth: AuthService
+  ) {
     this.tabletQuery = media.matchMedia('(min-width: 768px)');
-    const appComponent = this;
     this.tabletQueryListener = (e: MediaQueryListEvent) => {
-      appComponent.sideMenuOpened = e.matches;
+      this.sideMenuOpened = e.matches;
       changeDetectorRef.detectChanges();
     };
 

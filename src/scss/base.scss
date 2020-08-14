@@ -4,3 +4,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .m-15 {
   margin: 15px;
 }
+
+/*
+ * Colors
+ */
+.text-danger {
+  color: $color-danger !important;
+}
+a.text-danger:hover, a.text-danger:focus {
+  color: $color-danger-dark !important;
+}

@@ -1,6 +1,8 @@
 <app-header [(menuOpened)]="sideMenuOpened"></app-header>
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav [mode]="tabletQuery.matches ? 'side' : 'over'" class="app-sidenav mat-elevation-z3" [(opened)]="sideMenuOpened">
+  <mat-sidenav class="app-sidenav mat-elevation-z3"
+               [mode]="tabletQuery.matches ? 'side' : 'over'"
+               [opened]="sideMenuOpened && auth.isLoggedIn()">
     Sidenav content
   </mat-sidenav>
 
